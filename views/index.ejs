@@ -1,0 +1,32 @@
+    <%- include("partials/header.ejs") %>
+    <div id="content">
+        <div class="container">
+            <h1><%= day %></h1>
+            <form action=<%= type %> method="POST">
+                <ul>
+                    <% if(task_list.length!=0 ) { %> <!-- locals.task_list.length!=0 gives error? -->
+                        <% for(var i=0; i<task_list.length; i++) { %>
+                            <li>
+                                <div class="check_list">
+                                    <input type="checkbox" id="check" name="check">
+                                    <label for="taskname"><%= task_list[i] %></label>
+                                </div>
+                            </li>
+                        <% } %>
+                    <% } else{%>
+                        <li>
+                            <label for="taskname">No tasks</label>
+                        </li>
+                    <% } %>
+                </ul>
+                <hr>
+                <div class="submit">                
+                    <input type="text" id="taskname" name="taskname" placeholder="New Item" required>
+                    <input type="submit" value="+">
+                </div>   
+            </form>
+        </div>
+    </div>
+    
+</body>
+</html>

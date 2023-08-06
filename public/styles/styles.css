@@ -1,0 +1,122 @@
+*{
+    padding: 0px;
+    margin: 0px;
+}
+
+body{background-color: #F4E0B9;}
+
+#check:checked + label{
+    text-decoration:line-through
+}
+
+.container{width: 60vh;}
+
+#content{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100vh;
+}
+
+ul{
+    list-style: none;
+}
+
+nav ul{
+    display: flex;
+    justify-content: end;
+    padding: 2rem;
+}
+
+nav li{
+    margin: 1rem 2rem;
+}
+
+li a{
+    text-decoration:  none;
+    color: #FE0000;
+    font-size: 1.5em;
+    font-family: 'Open Sans', sans-serif;
+}
+
+li a::after{
+    content: '';
+    width: 0;
+    height: 1px;
+    background-color: red;
+    margin: auto;
+    display: block;
+}
+
+li a:hover::after{  
+    width: 100%;
+    transition: width 0.1s linear;
+}
+
+h1{
+    font-size: 3em;
+    color: #FE0000;
+    font-family: 'Open Sans', sans-serif;
+    text-transform: uppercase;
+    margin-bottom: 0.5em;
+    text-align: center;
+}
+
+.container li{
+    padding: 30px 30px;
+    margin: 5px;
+    background-color: #C2C2C2;
+    border-radius: 6em;
+}
+
+.check_list{
+    display: flex;
+    align-items: center;
+}
+
+.check_list input{
+    width: 1.5em;
+    height: 1.5em;
+    margin-right: 2em;
+}
+ul label{
+    font-family: 'Open Sans', sans-serif;
+    font-size: 1.2em;
+}
+
+
+input[type="submit"]{
+    border-radius: 50%;
+    aspect-ratio: 1 / 1;
+    height: 3em;
+    font-size: 15px;
+    font-weight: bolder;
+    background-color: #C2C2C2;
+    border: none;
+}
+
+input[type="submit"]:active{
+    background-color: #FE0000;
+}
+
+input[type="text"]{
+    width: 65%;
+    height: 3.5em;
+    font-size: 15px;
+    border: none;
+    margin-left: 2em; 
+    background-color: #F4E0B9;
+    text-align: center; 
+    font-family: 'Open Sans', sans-serif;
+    font-size: 1.2em;  
+    outline: none;   
+}
+input[type="text"]:focus{border-bottom: solid #969595 2px;}
+
+.submit{
+    margin-top: 25px;
+}
+
+hr{
+    margin-top: 1.5em;
+}
