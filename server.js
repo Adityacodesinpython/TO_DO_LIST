@@ -3,13 +3,14 @@ import ejs from "ejs"
 import bodyParser from "body-parser"
 
 const app = express();
-const port = 3000;
+const port = 8080;
 var today_task_list = [];
 var work_task_list = [];
 
 var options = { weekday: 'long', month: 'long', day: 'numeric' };
 var today  = new Date();
 
+app.set('view engine','ejs');
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static("public"));
 
