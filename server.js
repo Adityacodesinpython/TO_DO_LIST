@@ -8,10 +8,6 @@ var work_task_list = [];
 
 const PORT = process.env.PORT || 3030;
 
-// your code
-
-
-
 var options = { weekday: 'long', month: 'long', day: 'numeric' };
 var today  = new Date();
 
