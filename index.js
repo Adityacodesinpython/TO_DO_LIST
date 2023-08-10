@@ -3,13 +3,15 @@ import ejs from "ejs"
 import bodyParser from "body-parser"
 
 const app = express();
-const port = 3000;
 var today_task_list = [];
 var work_task_list = [];
+
+const PORT = process.env.PORT || 3030;
 
 var options = { weekday: 'long', month: 'long', day: 'numeric' };
 var today  = new Date();
 
+app.set('view engine','ejs');
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static("public"));
 
@@ -52,6 +54,6 @@ app.post("/work", (req, res) => {
 
     
 
-app.listen(port, () => {
-    console.log("Server is Live.");
-})
+app.listen(PORT, () => {
+  console.log(`server started on port ${PORT}`);
+});
