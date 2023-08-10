@@ -1,3 +1,5 @@
+/*     font-family:"Playfair Display", Georgia, "Times New Roman", serif *rtl:Amiri, Georgia, "Times New Roman", serif*; */
+
 *{
     padding: 0px;
     margin: 0px;
@@ -32,6 +34,15 @@ nav li{
     margin: 1rem 2rem;
 }
 
+@media (max-width: 768px) {
+    nav ul{
+        display: flex;
+        justify-content: center;
+    }
+
+    .container{ width: 50vh; }
+}
+
 li a{
     text-decoration:  none;
     color: #FE0000;
@@ -54,7 +65,7 @@ li a:hover::after{
 }
 
 h1{
-    font-size: 3em;
+    font-size: 2.8em;
     color: #FE0000;
     font-family: 'Open Sans', sans-serif;
     text-transform: uppercase;

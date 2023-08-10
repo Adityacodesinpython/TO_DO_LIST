@@ -26,7 +26,7 @@ app.get("/today", (req, res)=>{
 
 })
 app.post('/today', (req, res) => {
-
+    
     today_task_list.push(req.body.taskname)
     res.render("index.ejs", {
         task : req.body.taskname,
