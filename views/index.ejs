@@ -2,18 +2,20 @@
     <div id="content">
         <div class="container">
             <h1><%= day %></h1>
-            <form action=<%= type %> method="POST">
+            
                 <ul>
-                    <% if(task_list.length!=0 ) { %> <!-- locals.task_list.length!=0 gives error? -->
-                        <% for(var i=0; i<task_list.length; i++) { %>
+                    <% if(task_list.length!=0 ) { %>
+                        <% task_list.forEach((i) => { %>
                             <li>
                                 <div class="check_list">
-                                    <input type="checkbox" id="check" name="check">
-                                    <label for="taskname"><%= task_list[i] %></label>
-                                    <!-- <input type="removebutton" id="remove" value="⌫"> -->
+                                    <form action="/delete" method="POST">
+                                        <input onChange="this.form.submit()" value="<%= i._id %>" type="checkbox" id="check" name="checkbox">
+                                        <label for="taskname"><%= i.name %></label>
+                                        <input type="hidden" name="listName" value="<%= day %>">                                       
+                                    </form>
                                 </div>
                             </li>
-                        <% } %>
+                        <% }) %>
                     <% } else{%>
                         <li>
                             <label for="taskname">No tasks</label>
@@ -21,9 +23,10 @@
                     <% } %>
                 </ul>
                 <hr>
+            <form action="/" method="POST">
                 <div class="submit">                
-                    <input type="text" id="taskname" name="taskname" placeholder="New Item" required>
-                    <input type="submit" value="+">
+                    <input type="text" id="taskname" name="newItem" placeholder="New Item" required>
+                    <button type="submit" name="list" value="<%= day %>">+</button>
                 </div>   
             </form>
         </div>
